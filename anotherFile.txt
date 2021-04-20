@@ -1,0 +1,22 @@
+ git branch dubious-experiment
+
+  M---N-----O----P---Q ("master" and "dubious-experiment")
+
+  git checkout master
+
+  # Be careful with this next command: make sure "git status" is
+  # clean, you're definitely on "master" and the
+  # "dubious-experiment" branch has the commits you were working
+  # on first...
+
+  git reset --hard <SHA1sum of commit N>
+
+       ("master")
+  M---N-------------O----P---Q ("dubious-experiment")
+
+  git pull # Or something that updates "master" from
+           # somewhere else...
+
+  M--N----R---S ("master")
+      \
+       O---P---Q ("dubious-experiment")
